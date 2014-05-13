@@ -2,9 +2,16 @@
   text-align: center;
   transition:.5s;
 }
+.plan_box{
+  transition:.5s;
+  &:hover{
+
+    -webkit-transform:scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.67);
+  }
+}
 .featured{
-  -webkit-transform:scale(1.05);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.67);
+
 }
 .plan{
   background-color: #111575;
