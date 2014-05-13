@@ -25,6 +25,7 @@ $('.registrations').ready(function() {
           return Stripe.createToken(card, subscription.handleStripeResponse);
         },
         handleStripeResponse: function(status, response) {
+            console.log(status,response);
           if (status === 200) {
             $('#user_stripe_token').val(response.id)
             $('.card_form')[0].submit()
