@@ -2,6 +2,14 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    #charges = Stripe::Charge.all
+    #charges.count
+    #@total_amount = 0
+    #charges.each do |p|
+    #  @total_amount += p.amount
+    # end
+    #@customers = Stripe::Customer.all
+
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @users = User.all
   end
