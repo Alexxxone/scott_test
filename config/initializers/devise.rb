@@ -209,6 +209,11 @@ Devise.setup do |config|
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = Rails.env.test? ? :get : :delete
+  config.omniauth :stripe_connect,
+                  ENV['STRIPE_CONNECT_CLIENT_ID'],
+                  ENV['STRIPE_API_KEY'],
+                  :scope => 'read_write', # or :scope => 'read_only'
+                  :stripe_landing => 'login'
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.

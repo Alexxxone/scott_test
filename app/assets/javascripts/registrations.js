@@ -37,3 +37,6 @@ $('.registrations').ready(function() {
       return subscription.setupForm();
   });
 });
+
+//tok_1041jg4WTq7NScT14cpO2iFL
+//tok_1041ji4WTq7NScT1dXxeekgv
