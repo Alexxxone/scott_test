@@ -7,6 +7,9 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "https://js.stripe.com/v1/" %>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     <%= javascript_tag "Stripe.publishableKey = '#{STRIPE_PUBLIC_KEY}';" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
