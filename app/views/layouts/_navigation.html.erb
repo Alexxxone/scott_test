@@ -12,6 +12,11 @@
           <%= link_to 'Admin', users_path %>
         </li>
     <% else %>
+          <%- if current_user.user_stripe_token.blank? %>
+              <li>
+                <%= link_to 'Stripe Connect', "https://connect.stripe.com/oauth/authorize?response_type=code&client_id=#{ENV['STRIPE_CONNECT_CLIENT_ID']}"%>
+              </li>
+          <% end %>
           <%- current_user.roles.each do |role|%>
               <li><%=link_to  role.name.humanize, "/content/#{role.name}" %></li>
           <% end %>

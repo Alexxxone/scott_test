@@ -30,4 +30,4 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 
 #CUSTOM
 gem 'omniauth-stripe-connect'
-
+gem 'gon'

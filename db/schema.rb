@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121017180539) do
+ActiveRecord::Schema.define(:version => 20121017180540) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20121017180539) do
     t.string   "name"
     t.string   "customer_id"
     t.string   "last_4_digits"
+    t.string   "user_stripe_token"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

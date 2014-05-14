@@ -7,9 +7,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :stripe_token, :coupon
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :stripe_token, :coupon, :user_stripe_token
   attr_accessor :stripe_token, :coupon
-  before_save :update_stripe
+  #before_save :update_stripe
   before_destroy :cancel_subscription
 
   def update_plan(role)
@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   
   def update_stripe
     return if email.include?(ENV['ADMIN_EMAIL'])
-    #return if email.include?('@example.com') and not Rails.env.production?
+    return if email.include?('@example.com') and not Rails.env.production?
 
     if customer_id.nil?
       if !stripe_token.present?
@@ -89,7 +89,5 @@ class User < ActiveRecord::Base
     UserMailer.expire_email(self).deliver
     destroy
   end
-  def self.find_for_oauth(auth, signed_in_resource = nil)
 
-  end
 end
